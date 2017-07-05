@@ -27,11 +27,18 @@ For ArchLinux:
 ### Archlinux way
 `y -S rutracker-proxy`
 
-### Docker way
+### Fedora way
+0. Install free repo if it is not installed yet
 
-`docker pull zhulik/rutracker-proxy`
+`# sudo dnf install --nogpgcheck http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm`
 
-`docker run -d --rm zhulik/rutracker-proxy`
+1. Install rutracker-proxy
+
+`# sudo dnf install rutracker-proxy`
+
+Alternatively you can download and install package manually from http://koji.russianfedora.pro/koji/packageinfo?packageID=140
+
+2. Run rutracker-proxy by hand or via systemd unit with setting parameters in config file /etc/rutracker-proxy/rutracker-proxy.conf.
 
 ## Building from sources
 Proxy is written in Go, so build steps are ordinary for Go software. Clone the repository and
